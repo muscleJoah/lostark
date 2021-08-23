@@ -146,6 +146,8 @@ public class InfoService {
             return engraves;
     }
 
+
+    //TODO 이거 안지워지는거 고쳐야함.. 지워지는듯하면서도 안지워지네..
     private String deleteStingBetween(String str){
 
         StringBuffer stringBuff = new StringBuffer(str);
