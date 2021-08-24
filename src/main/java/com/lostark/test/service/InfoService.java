@@ -147,23 +147,24 @@ public class InfoService {
     }
 
 
-    //TODO 이거 안지워지는거 고쳐야함.. 지워지는듯하면서도 안지워지네..
     private String deleteStingBetween(String str){
 
-        StringBuffer stringBuff = new StringBuffer(str);
+        StringBuilder stringBuff = new StringBuilder(str);
+        int count = 0;
 
         for (int i = 0; i < stringBuff.length(); i++){
             if(stringBuff.charAt(i) == '<') {
                 for (int j = i+1; j < stringBuff.length(); j++) {
                     if (stringBuff.charAt(j) == '>') {
-                        System.out.println(String.format("%d           %d", i ,j +1));
-                        System.out.println(String.format("%s",stringBuff.substring(i,j+1)));
+//                        System.out.println(String.format("%d           %d", i ,j +1));
+//                        System.out.println(String.format("%s",stringBuff.substring(i,j+1)));
                         stringBuff.delete(i, j+1);
-
+                        i--;
                         break;
                     }
                 }
             }
+
         }
         System.out.println(stringBuff);
         return stringBuff.toString();
